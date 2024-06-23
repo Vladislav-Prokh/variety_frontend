@@ -171,6 +171,7 @@ const store = createStore({
                 const jwtToken = data.token; 
                 context.commit('SET_JWTTOKEN', {jwt:jwtToken,email:email,roles:data.roles,user_id:data.user_id});
                 context.commit('SET_REGERROR', null);
+                return true;
             } catch (error) {
                 if (error.response.status === 400) {
                     context.commit('SET_REGERROR', "user has already exists");

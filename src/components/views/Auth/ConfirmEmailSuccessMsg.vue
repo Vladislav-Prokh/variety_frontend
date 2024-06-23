@@ -24,7 +24,7 @@ export default {
   },
   methods:{
     confirmEmail(token){
-        axios.get(`http://localhost:8086/confirm/${token}`);
+        axios.get(`/confirm/${token}`);
     }
   },
   watch: {
