@@ -165,7 +165,7 @@ export default {
       }
     },
     async initRatings() {
-      const ratings = await axiosInstance.get(`http://localhost:8086/products/getRatings/${this.product.id}`);
+      const ratings = await axiosInstance.get(`/products/getRatings/${this.product.id}`);
       let averageRating = 0;
       if (ratings.data.length > 0) {
         for (let index = 0; index < ratings.data.length; index++) {
@@ -187,7 +187,7 @@ export default {
         this.currentUserEmail = localStorage.getItem('emailUser');
         if(this.currentUserEmail){
           try{
-          await axiosInstance.post(`http://localhost:8086/products/setRatings/${this.product.id}/${this.currentUserEmail}/${valueByUser}`);
+          await axiosInstance.post(`/products/setRatings/${this.product.id}/${this.currentUserEmail}/${valueByUser}`);
           }
           catch{
             this.showModal("Користувач не купив товар або вже оцінив його!",false);

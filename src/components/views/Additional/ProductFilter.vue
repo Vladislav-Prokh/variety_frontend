@@ -32,7 +32,7 @@
   
   
 <script>
-import axios from 'axios';
+import axiosInstance from '@/axious-conf';
 export default {
   props: {
     isOpen: {
@@ -68,7 +68,7 @@ export default {
       this.formattedPrice = `1 - ${this.priceRange}`;
     },
     async fetchBrands(){
-      const data = await axios.get("http://localhost:8086/products/brands/unique/10");
+      const data = await axiosInstance.get("/products/brands/unique/10");
       this.brands = data.data;
     },
     handleChangeBrand(event){

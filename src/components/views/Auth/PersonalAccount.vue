@@ -82,10 +82,10 @@ export default {
     async fetchUser() {
       try {
         const current_user_id = localStorage.getItem("user_id");
-        const response = await axiosInstance.get(`http://localhost:8086/users/accounts/${current_user_id}`);
+        const response = await axiosInstance.get(`/users/accounts/${current_user_id}`);
         if (response.status === 200 && response.data) {
           this.currentUser = response.data;
-          const ordersByUser = await axiosInstance.get(`http://localhost:8086/users/${current_user_id}/orders`);
+          const ordersByUser = await axiosInstance.get(`/users/${current_user_id}/orders`);
           this.userOrders = ordersByUser.data;
         } else {
           this.accessDeniedMessage = "Access Denied";

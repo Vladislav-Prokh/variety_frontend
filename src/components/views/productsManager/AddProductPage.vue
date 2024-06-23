@@ -152,7 +152,7 @@ export default {
         });
       },
       async fetchBrands(){
-        const brands = await axios.get("http://localhost:8086/products/brands/unique/10");
+        const brands = await axios.get("/products/brands/unique/10");
         if(brands){
           this.allBrands = brands.data;
         }
@@ -161,7 +161,7 @@ export default {
         this.productCategory = event.target.value;
         const chosenCategoryName = event.target.value;
         try {
-            const response = await axiosInstance.get("http://localhost:8086/category/getSubcategories", {
+            const response = await axiosInstance.get("/category/getSubcategories", {
                 params: {
                     categoryName: chosenCategoryName
                 }
@@ -186,7 +186,7 @@ export default {
         formData.append("product_id", id); 
         formData.append("mainImageIndex",this.productPreviewImageIndex);
         try {
-           await axiosInstance.post("http://localhost:8086/products/uploadImages", formData);
+           await axiosInstance.post("/products/uploadImages", formData);
       
         } 
         catch (error) {

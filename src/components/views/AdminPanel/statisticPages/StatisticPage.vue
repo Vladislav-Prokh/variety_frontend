@@ -140,7 +140,7 @@ export default {
             endDate: this.endDate,
             status: this.selectedTypeSales,
           };
-          const response = await axiosInstance.get('http://localhost:8086/orders/countByDateAndStatus', {
+          const response = await axiosInstance.get('/orders/countByDateAndStatus', {
             params: requestData,
           });
           const dataFromServer = response.data;

@@ -72,13 +72,13 @@
     },
     methods: {
       async fetchCategories() {
-        const response = await axiosInstance.get("http://localhost:8086/category/getAll");
+        const response = await axiosInstance.get("/category/getAll");
         this.categories = response.data;
         console.log(this.categories);
       },
       async addCategory() {
         try {
-          await axiosInstance.post("http://localhost:8086/category/add", {
+          await axiosInstance.post("/category/add", {
             name: this.newCategoryName,
           });
           this.newCategoryName = '';
@@ -89,7 +89,7 @@
       },
       async addSubcategory() {
         try {
-          await axiosInstance.post(`http://localhost:8086/category/add/${this.selectedCategoryId}/subcategory/${this.newSubcategoryName}`);
+          await axiosInstance.post(`/category/add/${this.selectedCategoryId}/subcategory/${this.newSubcategoryName}`);
           this.newSubcategoryName = '';
           this.selectedCategoryId = null;
           this.fetchCategories();
@@ -99,7 +99,7 @@
       },
       async deleteCategory(categoryId) {
         try {
-          await axiosInstance.post(`http://localhost:8086/category/delete/${categoryId}`);
+          await axiosInstance.post(`/category/delete/${categoryId}`);
           this.fetchCategories();
         } catch (error) {
           console.error("Ошибка при удалении категории:", error);
@@ -107,7 +107,7 @@
       },
       async deleteSubcategory(subcategoryId) {
         try {
-          await axiosInstance.post(`http://localhost:8086/category/delete/subcategory/${subcategoryId}`);
+          await axiosInstance.post(`/category/delete/subcategory/${subcategoryId}`);
           this.fetchCategories();
         } catch (error) {
           console.error("Ошибка при удалении подкатегории:", error);

@@ -48,15 +48,15 @@
     },
     methods: {
       async fetchComments() {
-        const data = await axiosInstance.get(`http://localhost:8086/comments/find/NonReadByModerator`);
+        const data = await axiosInstance.get(`/comments/find/NonReadByModerator`);
         this.comments = data.data;
       },
       async deleteComment(id) {
-        await axiosInstance.post(`http://localhost:8086/comments/delete/${id}`);
+        await axiosInstance.post(`/comments/delete/${id}`);
         this.fetchComments();
       },
       async toggleReadStatus(id) {
-        await axiosInstance.post(`http://localhost:8086/comments/changeStatusToRead/${id}`);
+        await axiosInstance.post(`/comments/changeStatusToRead/${id}`);
         this.fetchComments();
         }
     }

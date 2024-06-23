@@ -164,7 +164,7 @@ export default {
     let formData = new FormData();
     formData.append('order_id', order_id);
     formData.append('status', status);
-    axiosInstance.post('http://localhost:8086/orders/change/status', formData, {
+    axiosInstance.post('/orders/change/status', formData, {
         headers: {
             'Content-Type': 'multipart/form-data' 
         }
@@ -178,7 +178,7 @@ export default {
                 this.fetchOrders();
                 return;
             }
-            const response = await axiosInstance.get(`http://localhost:8086/orders/${status}`);
+            const response = await axiosInstance.get(`/orders/${status}`);
             this.orders = response.data;
 
         } 
@@ -212,7 +212,7 @@ export default {
         const self = this;
 
         try {
-            const response = await axiosInstance.get(`http://localhost:8086/orders/${orderId}/products`);
+            const response = await axiosInstance.get(`/orders/${orderId}/products`);
             const orderedProducts = [];
 
             response.data.forEach(item => {
@@ -233,7 +233,7 @@ export default {
         },
         async findOrders(){
             if(this.searchFieldInputText){
-                const data = await axiosInstance.get(`http://localhost:8086/orders/search/${this.searchFieldInputText}`)
+                const data = await axiosInstance.get(`/orders/search/${this.searchFieldInputText}`)
                 if(data.data.length>0){
                     this.orders = data.data;
                     this.searchFieldInputText = "";
@@ -241,7 +241,7 @@ export default {
             }
         },
        async deleteOrder(id){
-           await axiosInstance.post(`http://localhost:8086/orders/delete/${id}`);
+           await axiosInstance.post(`/orders/delete/${id}`);
             this.$router.go(0);
         }
     }

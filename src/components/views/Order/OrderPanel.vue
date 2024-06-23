@@ -250,7 +250,7 @@ export default {
             orderRequest.orderInfo.userId = orderedUserId;
         }
 
-        axios.post(`http://localhost:8086/orders/add`, orderRequest)
+        axios.post(`/orders/add`, orderRequest)
             .then(response => {
                 this.$router.push({ name: 'succeedOrder', params: { orderId: response.data }});
             })

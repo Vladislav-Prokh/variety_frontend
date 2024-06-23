@@ -116,7 +116,7 @@ export default {
       }
     },
      deleteProduct(id){
-      axiosInstance.post(`http://localhost:8086/products/delete/${id}`)
+      axiosInstance.post(`/products/delete/${id}`)
       location.reload();
       
     },
@@ -131,7 +131,7 @@ export default {
     this.error = null;  
 
     try {
-      const responseByName = await axios.get(`http://localhost:8086/products/${this.searchQuery}`);
+      const responseByName = await axios.get(`/products/${this.searchQuery}`);
       productsByName = responseByName.data;
     } catch (error) {
       console.error('Error fetching products by name:', error);
@@ -139,7 +139,7 @@ export default {
 
     if (!isNaN(this.searchQuery.trim())) {
       try {
-        const responseById = await axios.get(`http://localhost:8086/products/admin/id/${this.searchQuery}`);
+        const responseById = await axios.get(`/products/admin/id/${this.searchQuery}`);
         productById = responseById.data;
 
         if (productById && !Array.isArray(productById)) {

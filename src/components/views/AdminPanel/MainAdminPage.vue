@@ -115,7 +115,7 @@ export default {
     },
     async deleteUser(userId){
       try{
-        await axiosInstance.post(`http://localhost:8086/users/delete/${userId}`)
+        await axiosInstance.post(`/users/delete/${userId}`)
         this.$router.go();
       }
       catch(error){
@@ -124,24 +124,24 @@ export default {
 
     },
     async banUser(userId){
-      await axiosInstance.post(`http://localhost:8086/users/ban/${userId}`)
+      await axiosInstance.post(`/users/ban/${userId}`)
         this.$router.go();
     },
     async unBanUser(userId){
-        await axiosInstance.post(`http://localhost:8086/users/unban/${userId}`)
+        await axiosInstance.post(`/users/unban/${userId}`)
         this.$router.go();
     },
     async giveRole(id,role){
-      await axiosInstance.post(`http://localhost:8086/users/giveRights/${id}/${role}`)
+      await axiosInstance.post(`/users/giveRights/${id}/${role}`)
       this.$router.go();
     },
     async deleteRole(id,role){
-      await axiosInstance.post(`http://localhost:8086/users/deleteRights/${id}/${role}`)
+      await axiosInstance.post(`/users/deleteRights/${id}/${role}`)
       this.$router.go();
     },
    async findUser(){
       if(this.searchQuery){
-        const {data} = await axiosInstance.post(`http://localhost:8086/users/${this.searchQuery}`)
+        const {data} = await axiosInstance.post(`/users/${this.searchQuery}`)
         this.users = data;
       }
     },

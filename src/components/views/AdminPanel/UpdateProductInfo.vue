@@ -108,7 +108,7 @@ export default{
                         };
                        
                 try {
-                     await axiosInstance.post(`http://localhost:8086/products/update/${this.product.id}`, productToUpdate);
+                     await axiosInstance.post(`/products/update/${this.product.id}`, productToUpdate);
                      if(this.selectedImages){
                         await this.handleFileUpload(this.product.id);
                      }
@@ -170,7 +170,7 @@ export default{
         formData.append("product_id", id); 
         formData.append("mainImageIndex",this.productPreviewImageIndex);
         try {
-           await axiosInstance.post("http://localhost:8086/products/uploadImages", formData);
+           await axiosInstance.post("/products/uploadImages", formData);
       
         } 
         catch (error) {
@@ -179,7 +179,7 @@ export default{
       },
       async deleteImage(imageId){
         if(imageId){
-          const response  = await axiosInstance.post(`http://localhost:8086/products/deleteImageInProduct/${this.product.id}/${imageId}`);
+          const response  = await axiosInstance.post(`/products/deleteImageInProduct/${this.product.id}/${imageId}`);
           if(!response.data){
             this.images = this.images.filter(image => image.id !== imageId);
             this.selectedImages =   await this.selectedImages.filter(image => image.id !== imageId);
