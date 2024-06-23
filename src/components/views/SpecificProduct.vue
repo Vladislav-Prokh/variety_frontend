@@ -249,7 +249,7 @@ export default {
             }, 3000)
     },
     async fetchComments(){
-      const comments = await axiosInstance.get(`http://localhost:8086/comments/${this.$route.params.id}`)
+      const comments = await axiosInstance.get(`/comments/${this.$route.params.id}`)
       this.allComments = comments.data;
     },
     async sendComment(){
@@ -259,7 +259,7 @@ export default {
             return;
           }
           else{
-            const response = await axiosInstance.post(`http://localhost:8086/comments/add/${this.$route.params.id}/${this.currentUserEmail}/${this.commentForProduct}`);
+            const response = await axiosInstance.post(`/comments/add/${this.$route.params.id}/${this.currentUserEmail}/${this.commentForProduct}`);
             this.commentForProduct = "";
             if (response.data === false) {
               this.showModal("Ви ще не купили даний товар або вже залишили відгук!", false);
@@ -284,7 +284,7 @@ export default {
       }
     },
     deleteComment(id){
-      axiosInstance.post(`http://localhost:8086/comments/delete/${id}`)
+      axiosInstance.post(`/comments/delete/${id}`)
     }
     }
   };

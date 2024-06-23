@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import  AxiosInstance from 'axios';
+import  AxiosInstance from "../../../axious-conf.js";
 
 export default {
   data() {
@@ -23,8 +23,9 @@ export default {
     this.confirmEmail(this.token);
   },
   methods:{
-    confirmEmail(token){
-      AxiosInstance.get(`/confirm/${token}`);
+   async confirmEmail(token){
+
+      await AxiosInstance.get(`/confirm/${token}`);
     }
   },
   watch: {

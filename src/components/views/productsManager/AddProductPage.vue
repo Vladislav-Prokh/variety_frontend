@@ -254,7 +254,7 @@ export default {
                 }
             };
     try {
-         const response = await axiosInstance.post("http://localhost:8086/products/add?subcategoryId=" + this.productSubcategoryID, productWithAdditionalFields);
+         const response = await axiosInstance.post("/products/add?subcategoryId=" + this.productSubcategoryID, productWithAdditionalFields);
          await this.handleFileUpload(response.data);
 
     } catch (error) {
