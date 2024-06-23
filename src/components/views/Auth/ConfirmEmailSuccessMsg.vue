@@ -10,11 +10,9 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import  AxiosInstance from "../../../axious-conf.js";
-=======
+
 import AxiosInstance from "../../../axious-conf.js";
->>>>>>> 8452eda4cdfefd28cfbe7dc6218f80cd46f79375
+
 
 export default {
   data() {
@@ -28,25 +26,24 @@ export default {
   },
   methods:{
    async confirmEmail(token){
-<<<<<<< HEAD
+
 
       await AxiosInstance.get(`/confirm/${token}`);
-=======
+
       try {
         await AxiosInstance.get(`/confirm/${token}`);
-        // После успешного подтверждения показать сообщение или выполнить другие действия
         console.log("Email successfully confirmed");
       } catch (error) {
         console.error("Error confirming email:", error);
-        // Обработка ошибки, например, показать пользователю сообщение об ошибке
+
       }
->>>>>>> 8452eda4cdfefd28cfbe7dc6218f80cd46f79375
+
     }
   },
   watch: {
     '$route.params.token'(token) {
       this.token = token;
-      this.confirmEmail(token); // Вызываем метод при изменении токена через watch
+      this.confirmEmail(token); 
     }
   }
 };

@@ -156,6 +156,7 @@ export default {
         if(brands){
           this.allBrands = brands.data;
         }
+  
       },
       async handleCategoryChange(event) {
         this.productCategory = event.target.value;
