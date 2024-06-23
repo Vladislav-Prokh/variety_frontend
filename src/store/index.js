@@ -1,5 +1,4 @@
 import { createStore } from 'vuex'; 
-import axios from 'axios'; 
 import axiosInstance from '../axious-conf.js';
 
 const store = createStore({
@@ -176,7 +175,10 @@ const store = createStore({
                 if (error.response.status === 400) {
                     context.commit('SET_REGERROR', "user has already exists");
                 }
-            
+                else {
+                    console.error('Registration error:', error);
+                }
+                return false;  
             }
         },
         async GET_ALLPRODUCTS(context) {

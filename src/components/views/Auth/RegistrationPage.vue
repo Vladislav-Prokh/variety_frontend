@@ -115,8 +115,12 @@ export default {
     }
 
     try {
-        this.$store.dispatch('register', {username:this.username, email: this.email, password: this.password });
-        this.$router.push(`/confirm-email/${this.email}`);
+      const success = await this.$store.dispatch('register', { username: this.username, email: this.email, password: this.password });
+            if (success) {
+                this.$router.push(`/confirm-email/${this.email}`);
+            } else {
+                this.reg_error = this.$store.getters.regError || 'Registration failed';
+            }
     } catch (error) {
             console.error('Authentication error:', error);
     } 
