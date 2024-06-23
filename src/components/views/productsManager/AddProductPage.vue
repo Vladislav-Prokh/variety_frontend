@@ -109,7 +109,6 @@ import PageHeader from '../../PageHeader.vue';
 import PageFooter from '../../PageFooter.vue';
 import axiosInstance from '../../../axious-conf.js';
 import subcategoryFields from '../../../additional_fields_for_products.js';
-import axios from 'axios';
 
 export default {
   components: {
@@ -152,7 +151,7 @@ export default {
         });
       },
       async fetchBrands(){
-        const brands = await axios.get("/products/brands/unique/10");
+        const brands = await axiosInstance.get("/products/brands/unique/10");
         if(brands){
           this.allBrands = brands.data;
         }
@@ -255,7 +254,7 @@ export default {
                 }
             };
     try {
-         const response = await axiosInstance.post("/products/add?subcategoryId=" + this.productSubcategoryID, productWithAdditionalFields);
+         const response = await axiosInstance.post("http://85.217.171.56:8086/products/add?subcategoryId=" + this.productSubcategoryID, productWithAdditionalFields);
          await this.handleFileUpload(response.data);
 
     } catch (error) {
