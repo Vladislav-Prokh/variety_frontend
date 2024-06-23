@@ -141,7 +141,7 @@ const store = createStore({
     actions: {
         async authenticate(context, { email, password }) {
             try {
-                const { data } = await axios.post('http://85.217.171.56:8086/signin', {
+                const { data } = await axiosInstance.post('/signin', {
                     email,
                     password
                 }, {
@@ -164,7 +164,7 @@ const store = createStore({
 
         }){
             try {
-                const { data } = await axios.post('http://85.217.171.56:8086/registration', {
+                const { data } = await axiosInstance.post('/registration', {
                     username,
                     email,
                     password
@@ -181,7 +181,7 @@ const store = createStore({
         },
         async GET_ALLPRODUCTS(context) {
             try {
-                const { data } = await axios.get('http://85.217.171.56:8086/home');
+                const { data } = await axiosInstance.get('/home');
                 context.commit('SET_ALLPRODUCTS', data);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -189,7 +189,7 @@ const store = createStore({
         },
         async GET_SPECIFICPRODUCT(context,id) {
             try {
-                const { data } = await axios.get(`http://85.217.171.56:8086/products/id/${id.id}`)
+                const { data } = await axiosInstance.get(`/products/id/${id.id}`)
                 context.commit('SET_SPECIFICPRODUCT', data);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -197,7 +197,7 @@ const store = createStore({
         },
         async GET_SEARCHEDPRODUCTS(context, { name }) {
             try {
-                const { data } = await axios.get(`http://85.217.171.56:8086/products/${name}`);
+                const { data } = await axiosInstance.get(`/products/${name}`);
                 if (data && data.length > 0) {
                     context.state.serchingProductsError = false;
                 } else {
@@ -212,7 +212,7 @@ const store = createStore({
         },
         async GET_ALLUSERS(context) {
             try {  
-               const { data } = await  axiosInstance.get(`http://85.217.171.56:8086/users/all`)
+               const { data } = await  axiosInstance.get(`/users/all`)
                context.commit('SET_ALLUSERS', data);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -220,7 +220,7 @@ const store = createStore({
         },
         async GET_SPECISICUSER(context,param) {
             try {  
-               const { data } = await  axiosInstance.get(`http://85.217.171.56:8086/user/${param.name}`)
+               const { data } = await  axiosInstance.get(`/user/${param.name}`)
                context.commit('SET_SPECIFICUSER', data);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -228,7 +228,7 @@ const store = createStore({
         },
         async GET_ALLCATEGORIES(context){
             try {  
-                const { data } = await  axios.get(`http://85.217.171.56:8086/category/getAll`)
+                const { data } = await  axiosInstance.get(`/category/getAll`)
                 context.commit('SET_ALLCATEGORIES', data);
              } catch (error) {
                  console.error('Error fetching products:', error);
@@ -245,7 +245,7 @@ const store = createStore({
         },
         async GET_ALLORDERS(context){
             try{
-                const {data}  = await axiosInstance('http://85.217.171.56:8086/orders/All');
+                const {data}  = await axiosInstance('/orders/All');
                 context.commit('SET_COSTUMERSORDERS', data);
             }
             catch(error){
