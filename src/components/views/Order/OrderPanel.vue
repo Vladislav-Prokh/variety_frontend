@@ -67,10 +67,10 @@
 
             <div id = "PaymentPanel">
               <h5>{{ $t('paymentWay') }}</h5>
-                  <div class="payment-method">
+                   <!--<div class="payment-method">
                     <input type="radio" id="cardPayment" name="paymentMethod" value="card" v-model="paymentMethod" >
                     <label for="cardPayment">Карткою <img src="../../../assets/cardWayToPay.png" alt="Card"></label>
-                  </div>
+                  </div>-->
                   <div class="payment-method">
                     <input type="radio" id="cashPayment" name="paymentMethod" value="cash" v-model="paymentMethod">
                     <label for="cashPayment">  Готівкою <img src="../../../assets/moneyWayToPay.png" alt="Card"> </label>
@@ -252,7 +252,8 @@ export default {
 
         axios.post(`/orders/add`, orderRequest)
             .then(response => {
-                this.$router.push({ name: 'succeedOrder', params: { orderId: response.data }});
+              this.$router.push({ name: 'succeedOrder', params: { orderId: response.data } });
+
             })
             .catch(error => {
               this.errorCreationOrder = "При формуванні замовлення сталась помилка, такого товару більше не існує"

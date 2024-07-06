@@ -3,12 +3,13 @@
         <page-header></page-header>
         <div class = "content">
             <div id = "OrderInfo">
-          <span id = "thankIntro">Дякуємо за замовлення!</span>
-          <p>Ваше замовлення  #<span id = "orderId">{{ $route.params.orderId }}</span> прийнято в обробку. </p>
-          <p>Наш оператор може зв'язатися з вами для уточнення даних</p>
-          <router-link to="/home" >
-          <button id="homeBtn" >Home</button>
-          </router-link>
+                  <span id = "thankIntro">Дякуємо за замовлення!</span>
+                  <p>Ваше замовлення #<span id="orderId">{{ orderId }}</span> прийнято в обробку. </p>
+                  <p>Наш оператор може зв'язатися з вами для уточнення даних</p>
+                 
+                  <router-link to="/home" >
+                  <button id="homeBtn" >Home</button>
+                  </router-link>
             </div>
         </div>
         <page-footer></page-footer>

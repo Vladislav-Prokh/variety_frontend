@@ -433,5 +433,36 @@ header {
         padding: 6px 12px;
         font-size: 14px;
     }
+
+
+    .header-buttons {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+    font-size: 30px;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #CCCCCC;
+    padding: 15px;
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    right: 0; 
+    z-index: 1000; 
+    border-top: 5px solid #ddd;
+  }
+
+  .mobile-menu i {
+    margin-bottom: 10px;
+    font-size: 30px;
+    margin-left: 1vh;
+  }
 }
 </style>
