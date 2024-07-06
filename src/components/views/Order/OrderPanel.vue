@@ -108,7 +108,7 @@
   <script>
   import PageHeader from '../../PageHeader.vue';
   import PageFooter from '../../PageFooter.vue';
-  import axios from 'axios';
+  import axiosInstance from '@/axious-conf';
   import 'bootstrap-icons/font/bootstrap-icons.css';
   import 'typeface-montserrat';
 
@@ -250,7 +250,7 @@ export default {
             orderRequest.orderInfo.userId = orderedUserId;
         }
 
-        axios.post(`/orders/add`, orderRequest)
+        axiosInstance.post(`/orders/add`, orderRequest)
             .then(response => {
               this.$router.push({ name: 'succeedOrder', params: { orderId: response.data } });
 

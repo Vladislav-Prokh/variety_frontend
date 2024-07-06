@@ -276,4 +276,11 @@ button {
     width: 100%;
   }
 }
+
+@media (max-width: 550px) {
+  .signup {
+    top: 60%;
+  }
+ 
+}
 </style>
