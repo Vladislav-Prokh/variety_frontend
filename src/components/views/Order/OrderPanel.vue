@@ -109,6 +109,7 @@
   import PageHeader from '../../PageHeader.vue';
   import PageFooter from '../../PageFooter.vue';
   import axiosInstance from '@/axious-conf';
+  import axios from 'axios';
   import 'bootstrap-icons/font/bootstrap-icons.css';
   import 'typeface-montserrat';
 
