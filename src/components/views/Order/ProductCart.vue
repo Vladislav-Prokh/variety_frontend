@@ -209,22 +209,61 @@ input {
 @media (max-width: 600px) {
   #productsPanel {
     padding: 10px;
+    margin: 10px;
   }
 
   .productPanelItem {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .productImage {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
   }
 
   .productInfo {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
-  .productPanelItemName,
+  .productPanelItemName {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
   .productPanelItemPrice {
-    margin-right: 0;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .amountOfCurrentProducts {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+
+  .removeButton {
+    width: 40px;
+    padding: 8px;
+  }
+
+  #TotalPrice, #createOrderPanel {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #createOrderBtn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
   }
 }
+
+
 </style>

@@ -20,7 +20,7 @@
   import PageHeader from '../../PageHeader.vue'
   import PageFooter from '../../PageFooter.vue'
   export default {
-    props: ['orderId'],
+  props: ['orderId'],
   name: 'ThankfulPage',
   components: {
     PageHeader,
