@@ -81,7 +81,7 @@ import PageHeader from '@/components/PageHeader.vue';
 import PageFooter from '@/components/PageFooter.vue';
 import { Bar, Line, Doughnut } from 'vue-chartjs';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend, PointElement, LineElement, ArcElement } from 'chart.js';
-import axiosInstance from '@/axious-conf';
+import axiosInstance from '../../../../axious-conf.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale, Title, PointElement, LineElement);
 

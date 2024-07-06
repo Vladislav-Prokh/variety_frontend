@@ -2,7 +2,7 @@
   <div id="HeaderContainer">
     <header>
       <div id="autorizatinBtnPannel">
-        <div v-if="!isAuthorised">
+        <div v-if="!isAuthorised" >
           <router-link to="/login">
             <i class="btn bi bi-box-arrow-in-right"></i>
           </router-link>
@@ -374,6 +374,7 @@ header {
   .mobile-menu-button {
     display: block;
     font-size: 30px;
+    background-color: #d4d4d4;
   }
 
   .mobile-menu {
@@ -407,6 +408,8 @@ header {
 }
 
 @media (max-width: 947px) {
+
+
   .header-buttons {
     display: none;
   }
@@ -414,6 +417,7 @@ header {
   .mobile-menu-button {
     display: block;
     font-size: 30px;
+    background-color: #dfe0e0;
   }
 
   .mobile-menu {
@@ -444,9 +448,38 @@ header {
     margin-left: 5vh;
     font-size: 20px;
   }
+  
 }
 
+@media (max-width: 415px) {
+ #autorizatinBtnPannel{
+  height: 15%;
+  width: auto;
+ }
+ .language-container {
+  transform: scale(0.8);
+ }
+ .mobile-menu-button {
+    font-size: 20px;
+  }
+}
 
-    
+@media (max-height: 1175px) {
+  #HeaderContainer {
+        margin-bottom: 5vh;
+    }
+}
+
+@media (max-height: 840px) {
+  #HeaderContainer {
+        margin-bottom: 9vh;
+    }
+}
+
+@media (max-height: 600px) {
+  #HeaderContainer {
+        margin-bottom: 12vh;
+    }
+}
 
 </style>

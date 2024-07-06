@@ -3,10 +3,6 @@
       <page-header></page-header>
 
       <div id="content">
-          <div id="contactUsTextPanel">
-              <p>{{ $t('contactUs') }}</p>
-          </div>
-
           <div id="informSendingMsg" :class="{ 'successSentLetter': isSentSuccessLetter, 'failSentLetter': !isSentSuccessLetter }" v-if="informSendingLetterMsgVisible">
               {{ informSendingLetterMsg }}
           </div>

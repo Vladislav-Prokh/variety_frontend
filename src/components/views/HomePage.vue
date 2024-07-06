@@ -174,8 +174,8 @@ export default {
   border-radius: 5px;
   text-align: center;
   position: fixed;
-  top: 20px; /* Изменено на top */
-  left: 80%; /* Добавлено для центрирования по горизонтали */
+  top: 20px; 
+  left: 80%; 
   transform: translateX(-50%);
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
