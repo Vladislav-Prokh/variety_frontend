@@ -110,7 +110,6 @@ import PageFooter from '../../PageFooter.vue';
 import axiosInstance from '../../../axious-conf.js';
 import subcategoryFields from '../../../additional_fields_for_products.js';
 
-
 export default {
   components: {
     PageHeader,
@@ -255,7 +254,7 @@ export default {
                 }
             };
     try {
-         const response = await axiosInstance.post("/products/add?subcategoryId=" + this.productSubcategoryID, productWithAdditionalFields);
+         const response = await axiosInstance.post("http://85.217.171.56:8086/products/add?subcategoryId=" + this.productSubcategoryID, productWithAdditionalFields);
          await this.handleFileUpload(response.data);
 
     } catch (error) {
