@@ -2,7 +2,7 @@ import axios from 'axios';
 import router from './router';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://variety.in.net/:8086',
+  baseURL: 'http://variety.in.net:8086',
   timeout: 5000, 
 });
 
