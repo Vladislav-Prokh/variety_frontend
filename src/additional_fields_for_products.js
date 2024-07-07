@@ -4,6 +4,12 @@ const clothesFields = [
   { name: 'country', label: 'country', type: 'text' },
 ];
 
+const shoesFields = [
+  { name: 'code', label: 'Артикул', type: 'text' },
+  { name: 'size', label: 'Size', type: 'text' },
+  { name: 'country', label: 'country', type: 'text' },
+  { name: 'material', label: 'Material', type: 'text' },
+]
 const subcategoryFields = {
   'accessories': [
     { name: 'material', label: 'Material', type: 'text' },
@@ -29,27 +35,6 @@ const subcategoryFields = {
     { name: 'classification_of_aroma', label: 'Classification_of_aroma', type: 'text' },
   ],
 
-  'laptops': [
-    { name: 'processor', label: 'Processor', type: 'text' },
-    { name: 'graphics', label: 'Graphics', type: 'text' },
-    { name: 'RAM', label: 'RAM', type: 'number' },
-    { name: 'storage', label: 'Storage', type: 'number' },
-    { name: 'motherboard', label: 'motherboard', type: 'text' }
-  ],
-  'pc': [
-    { name: 'processor', label: 'Processor', type: 'text' },
-    { name: 'graphics', label: 'Graphics', type: 'text' },
-    { name: 'RAM', label: 'RAM', type: 'number' },
-    { name: 'storage', label: 'Storage', type: 'number' },
-    { name: 'display', label: 'Display', type: 'text' },
-    { name: 'motherboard', label: 'Motherboard', type: 'text' },
-    { name: 'operatingSystem', label: 'Operating System', type: 'text' },
-    { name: 'powerSupply', label: 'Power Supply', type: 'text' },
-    { name: 'keyboard', label: 'Keyboard', type: 'text' },
-    { name: 'opticalDrive', label: 'Optical Drive', type: 'text' },
-    { name: 'weight', label: 'Weight', type: 'number' },
-],
-
   'smartphones': [
     { name: 'processor', label: 'Processor', type: 'text' },
     { name: 'display', label: 'Display', type: 'text' },
@@ -59,7 +44,15 @@ const subcategoryFields = {
     { name: 'camera', label: 'camera', type: 'number' },
     { name: 'screenType', label: 'screen type', type: 'text' },
 
-  ]
+  ],
+
+  'women shoes': [
+    ...shoesFields,
+  ],
+  'man shoes': [
+    ...shoesFields,
+  ],
+  
 };
 
 export default subcategoryFields;
